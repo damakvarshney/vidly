@@ -31,7 +31,6 @@ const Pagination = (props) => {
       </ul>
     </nav>
   );
-  // );
 };
 
 export default Pagination;

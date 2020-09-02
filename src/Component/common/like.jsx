@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 class Like extends Component {
   render() {
     let classes = "fa fa-heart";
@@ -9,7 +8,11 @@ class Like extends Component {
         onClick={this.props.onClick}
         className={classes}
         aria-hidden="false"
-        style={{ padding: 10, cursor: "pointer" }}
+        style={{
+          padding: 10,
+          cursor: "pointer",
+          fontWeight: "900",
+        }}
       ></i>
     );
   }
