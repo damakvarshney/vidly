@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 
+// Mainly concerned to genre displayed on the page.
+//But it is reusable
+//
+
 class ListGroup extends Component {
   state = {};
   render() {
     const {
       items,
       selectedItem,
+      onItemSelect,
+      //both the below Default Props
       textProperty,
       valueProperty,
-      onItemSelect,
     } = this.props;
 
     return (
