@@ -2,14 +2,15 @@ import React, { Component } from "react";
 
 class TableHeader extends Component {
   raiseSort(path) {
-    const sortColumns = { ...this.props.sortColumns };
-    if (sortColumns.path === path) {
-      sortColumns.order = sortColumns.order === "asc" ? "desc" : "asc";
+    const sortColumnsReceived = { ...this.props.sortColumns };
+    if (sortColumnsReceived.path === path) {
+      sortColumnsReceived.order =
+        sortColumnsReceived.order === "asc" ? "desc" : "asc";
     } else {
-      sortColumns.path = path;
-      sortColumns.order = "asc";
+      sortColumnsReceived.path = path;
+      sortColumnsReceived.order = "asc";
     }
-    this.props.onSort(sortColumns);
+    this.props.onSort(sortColumnsReceived);
   }
 
   renderSortIcon = (column) => {

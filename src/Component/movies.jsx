@@ -20,10 +20,9 @@ class Movies extends Component {
     sortColumns: { path: "title", order: "asc" },
   };
 
+  //Adding "all genre" category to listGroup of genres(action,comedy,thriller)
   componentDidMount() {
-    //Adding "all genre" category to listGroup of genres(action,comedy,thriller)
     const genre = [{ id: "", name: "All Genres" }, ...getGenres()];
-
     this.setState({ movies: getMovies(), genres: genre });
   }
 
@@ -36,16 +35,13 @@ class Movies extends Component {
   };
 
   //for providing a like to movie (boolean value) if liked means "true"
+  //getting index no of movie (received from component by onPress argument )
+  //clone of that single movie
+  //setting like if liked and vice-versa
   handleLike = (movie) => {
     const moviesWithLikedInfo = [...this.state.movies];
-
-    //getting index no of movie (received from component by onPress argument )
     const index = moviesWithLikedInfo.indexOf(movie);
-
-    //clone of that single movie
     moviesWithLikedInfo[index] = { ...moviesWithLikedInfo[index] };
-
-    //setting like if liked and vice-versa
     moviesWithLikedInfo[index].liked = !moviesWithLikedInfo[index].liked;
     this.setState({ movies: moviesWithLikedInfo });
   };
@@ -62,8 +58,8 @@ class Movies extends Component {
   };
 
   //
-  handleSort = (sortColumns) => {
-    this.setState({ sortColumns: sortColumns });
+  handleSort = (sortColumnsReceived) => {
+    this.setState({ sortColumns: sortColumnsReceived });
   };
 
   render() {

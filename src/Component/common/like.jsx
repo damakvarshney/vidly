@@ -1,20 +1,22 @@
 import React, { Component } from "react";
+
 class Like extends Component {
   render() {
-    let classes = "fa fa-heart";
-    if (!this.props.liked) classes += "-o";
+    const { liked, onClick } = this.props;
+
     return (
       <i
-        onClick={this.props.onClick}
-        className={classes}
-        aria-hidden="false"
-        style={{
-          padding: 10,
-          cursor: "pointer",
-          fontWeight: "900",
-        }}
-      ></i>
+        style={{ cursor: "pointer" }}
+        onClick={onClick}
+        className={this.setClasses(liked)}
+        aria-hidden="true"
+      />
     );
+  }
+
+  setClasses(liked) {
+    let classes = "fa fa-heart";
+    return liked ? classes : (classes += "-o");
   }
 }
 
