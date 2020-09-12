@@ -6,6 +6,8 @@ import Pagination from "./common/pagination";
 import { paginate } from "../utils/paginate";
 import ListGroup from "./common/listGroup";
 import MoviesTable from "./moviesTable";
+import { Link } from "react-router-dom";
+import MovieForm from "./movieForm";
 
 //Main Page
 
@@ -103,7 +105,22 @@ class Movies extends Component {
           />
         </div>
         <div className="col" style={{ margin: 20 }}>
-          <p>Showing {filtered.length} movies in the database.</p>
+          <div
+            className="row"
+            style={{
+              marginRight: 20,
+              marginBottom: 20,
+            }}
+          >
+            <button
+              className="btn btn-primary"
+              style={{ padding: 10, marginRight: 20 }}
+              onClick={<MovieForm />}
+            >
+              Add Movie
+            </button>
+            <p>Showing {filtered.length} movies in the database.</p>
+          </div>
           <MoviesTable
             movies={movies}
             onLike={this.handleLike}
