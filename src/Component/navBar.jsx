@@ -45,11 +45,6 @@ const NavBar = () => {
               Register
             </NavLink>
           </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/movies/:id">
-              MovieForm
-            </NavLink>
-          </li>
         </ul>
       </div>
     </nav>

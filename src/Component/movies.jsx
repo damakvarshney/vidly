@@ -112,13 +112,13 @@ class Movies extends Component {
               marginBottom: 20,
             }}
           >
-            <button
+            <Link
+              to="/movies/new"
               className="btn btn-primary"
               style={{ padding: 10, marginRight: 20 }}
-              onClick={<MovieForm />}
             >
               Add Movie
-            </button>
+            </Link>
             <p>Showing {filtered.length} movies in the database.</p>
           </div>
           <MoviesTable
